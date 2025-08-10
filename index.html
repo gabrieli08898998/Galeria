@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fotografia</title>
+<link rel="stylesheet" href="foto.css">
+
+</head>
+<body>
+<div class="title">
+<h1>Olá, bem-vindo!</h1>
+<p>Aqui você verá algumas de minhas fotografias preferidas.</p>
+<h4>
+  Fotografar a natureza pra mim é como guardar pedaços de eternidade no bolso.
+  É congelar o instante exato em que o sol beija o mar, em que o vento acaricia as folhas,
+  em que um pássaro ousa voar só pra me dar um clique perfeito.
+  É mais que um hobby, é um pacto silencioso com o mundo:
+  eu prometo registrar sua beleza, e ele promete me surpreender sempre que eu olhar através da lente.
+</h4></div>
+<div class="h2"><h2>Fotografias</h2></div>
+
+<div class="fotos">
+  <img src="foto1.png" alt="Árvore solitária sob céu parcialmente nublado">
+  <img src="foto2.png" alt="Flor roxa em close com fundo desfocado">
+  <img src="foto3.png" alt="Montanhas cobertas por vegetação ao entardecer">
+  <img src="foto4.png" alt="Caminho rural cercado por árvores e vegetação">
+  <img src="foto6.png" alt="Céu com nuvens douradas refletindo a luz do entardecer">
+  <img src="foto7.png" alt="Folha verde iluminada por luz suave">
+  <img src="foto8.png" alt="Montanhas distantes com céu azul e nuvens">
+  <img src="foto9.png" alt="Paisagem rural com vegetação e céu aberto">
+  <img src="foto10.png" alt="Céu com nuvens e tons dourados no horizonte">
+  <img src="foto11.png" alt="Pôr do sol com nuvens alaranjadas e silhueta de árvores no horizonte">
+  <img src="foto12.png" alt="Entardecer com céu azul e laranja, montanha ao fundo e silhueta de árvores">
+  <img src="foto13.png" alt="Sol brilhando no horizonte visto a partir do nível do chão de uma estrada, com reflexos">
+  <img src="foto14.png" alt="Planta verde em destaque com fundo desfocado e luz do sol filtrada">
+  <img src="foto15.png" alt="Céu azul com nuvens finas e montanhas ao fundo em um cenário rural">
+  <img src="foto16.png" alt="Pôr do sol com palmeiras e nuvens douradas no céu">
+  <img src="foto17.png" alt="Folhas verdes de uma árvore em primeiro plano contra um céu claro">
+  <img src="foto18.png" alt="Céu noturno estrelado com copa de árvore iluminada na parte inferior">
+  <img src="foto19.png" alt="Paisagem natural com vegetação e rio ao fundo">
+  <img src="foto20.png" alt="Vista de montanha com céu azul">
+  <img src="foto21.png" alt="Flor delicada em close com fundo desfocado">
+  <img src="foto22.png" alt="Pôr do sol dourado sobre um campo aberto">
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="fechar">&times;</span>
+  <img class="modal-conteudo" id="imgModal" alt="">
+</div>
+
+<footer>
+  <p>Fotografias por <a href="#" target="_blank">Gabriel</a></p>
+  <p>© 2025 Gabriel Todos os direitos reservados.</p>
+</footer>
+<script>
+const imagens = document.querySelectorAll('.fotos img');
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('imgModal');
+const fecharBtn = document.querySelector('.fechar');
+
+imagens.forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';  // abre modal só no clique
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  });
+});
+
+fecharBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  modal.style.display = 'none';
+});
+
+modal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+</script>
+</body>
+</html>
